@@ -1,7 +1,10 @@
 import React, { useState } from "react"
 import axios from "axios"
+import { useHistory } from "react-router-dom"
 
 const AddFriends = () => {
+
+    const { push } = useHistory()
 
     const initialState = {
         name: "",
@@ -27,7 +30,7 @@ const AddFriends = () => {
             }
         })
             .then(res => {
-                console.log(res)
+                push('/friends')
             })
             .catch(err => {
                 console.log(err)
